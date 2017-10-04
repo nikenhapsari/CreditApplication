@@ -133,7 +133,9 @@ public class CreditApp extends javax.swing.JFrame {
                             Logger.getLogger(CreditApp.class.getName()).log(Level.SEVERE, null, ex);
                         } catch (ParseException ex) {
                             Logger.getLogger(CreditApp.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+                        } catch (IndexOutOfBoundsException ix){
+        
+        }
                     }
                 }
             });
@@ -141,22 +143,24 @@ public class CreditApp extends javax.swing.JFrame {
             Logger.getLogger(CreditApp.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(CreditApp.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IndexOutOfBoundsException ix){
+        
         }
     }
 
-    private void updateData() throws IOException, FileNotFoundException, ParseException {
-        Method data = new Method();
-        List<Client> client = data.getDataFromFile("C:/JAVA_LATIHAN/dataclient.txt");
-        DefaultTableModel model = (DefaultTableModel) masterTabel.getModel();
-        int terakhir = client.size() - 1;
-        Object[] row = new Object[5];
-        row[0] = client.get(terakhir).getKode();
-        row[1] = client.get(terakhir).getNama();
-        row[2] = client.get(terakhir).getUmur();
-        row[3] = client.get(terakhir).getStatus();
-        row[4] = client.get(terakhir).getGaji();
-        model.addRow(row);
-    }
+//    private void updateData() throws IOException, FileNotFoundException, ParseException {
+//        Method data = new Method();
+//        List<Client> client = data.getDataFromFile("C:/JAVA_LATIHAN/dataclient.txt");
+//        DefaultTableModel model = (DefaultTableModel) masterTabel.getModel();
+//        int terakhir = client.size() - 1;
+//        Object[] row = new Object[5];
+//        row[0] = client.get(terakhir).getKode();
+//        row[1] = client.get(terakhir).getNama();
+//        row[2] = client.get(terakhir).getUmur();
+//        row[3] = client.get(terakhir).getStatus();
+//        row[4] = client.get(terakhir).getGaji();
+//        model.addRow(row);
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -716,14 +720,9 @@ public class CreditApp extends javax.swing.JFrame {
     }//GEN-LAST:event_namaTextFieldActionPerformed
 
     private void reloadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reloadButtonActionPerformed
-        try {
-            // TODO add your handling code here:
-            updateData();
-        } catch (IOException ex) {
-            Logger.getLogger(CreditApp.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParseException ex) {
-            Logger.getLogger(CreditApp.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       DefaultTableModel model = (DefaultTableModel) masterTabel.getModel();
+       model.setRowCount(0);
+       showPeople();
     }//GEN-LAST:event_reloadButtonActionPerformed
 
     private void filterTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterTextFieldActionPerformed
