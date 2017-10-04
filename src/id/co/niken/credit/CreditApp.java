@@ -18,9 +18,12 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ListSelectionModel;
+import javax.swing.RowFilter;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -168,7 +171,7 @@ public class CreditApp extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        filterTextField = new javax.swing.JTextField();
         reloadButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -196,7 +199,6 @@ public class CreditApp extends javax.swing.JFrame {
         hpTextField = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         telpTextField = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         historyStatus = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
@@ -236,6 +238,12 @@ public class CreditApp extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel1.setText("Filter");
+
+        filterTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filterTextFieldActionPerformed(evt);
+            }
+        });
 
         reloadButton.setText("Reload Data");
         reloadButton.addActionListener(new java.awt.event.ActionListener() {
@@ -331,8 +339,6 @@ public class CreditApp extends javax.swing.JFrame {
 
         telpTextField.setEditable(false);
 
-        jButton2.setText("Cari");
-
         jLabel27.setText("Status");
 
         historyStatus.setText("Riwayat Kredit");
@@ -352,9 +358,7 @@ public class CreditApp extends javax.swing.JFrame {
                                 .addGap(10, 10, 10)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2))))
+                                .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(154, 154, 154)
                         .addComponent(jLabel27)
@@ -414,8 +418,7 @@ public class CreditApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
+                            .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -471,7 +474,7 @@ public class CreditApp extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
                             .addComponent(historyStatus))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Data Nasabah", jPanel1);
@@ -723,6 +726,13 @@ public class CreditApp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reloadButtonActionPerformed
 
+    private void filterTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterTextFieldActionPerformed
+        // TODO add your handling code here:
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) masterTabel.getModel()));
+        sorter.setRowFilter(RowFilter.regexFilter(filterTextField.getText()));
+        masterTabel.setRowSorter(sorter);
+    }//GEN-LAST:event_filterTextFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -764,12 +774,12 @@ public class CreditApp extends javax.swing.JFrame {
     private javax.swing.JTextField cicilanKeTextField;
     private javax.swing.JTextField cicilanTextField;
     private javax.swing.JTextField dendaTextField;
+    private javax.swing.JTextField filterTextField;
     private javax.swing.JTextField gajiTextField;
     private javax.swing.JTextField hargaTextField;
     private javax.swing.JCheckBox historyStatus;
     private javax.swing.JTable historyTabel;
     private javax.swing.JTextField hpTextField;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -805,7 +815,6 @@ public class CreditApp extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> jenisKelaminCombo;
     private javax.swing.JTextField ketTextField;
     private javax.swing.JTextField kodeTextField;
