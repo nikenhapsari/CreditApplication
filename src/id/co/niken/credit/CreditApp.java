@@ -81,11 +81,11 @@ public class CreditApp extends javax.swing.JFrame {
                             DefaultTableModel hModel = (DefaultTableModel) historyTabel.getModel();
                             Object[] hRow = new Object[4];
                             historyStatus.setSelected(false);
-                            
+                            hModel.setRowCount(0);
                             for (History h : history) {
                                 Boolean statusKredit = h.getClient().getKode().equalsIgnoreCase(client.get(i).getKode());
                                 System.out.println(statusKredit);
-                                
+
                                 if (statusKredit) {
                                     historyStatus.setSelected(true);
                                     hRow[0] = h.getClient().getKode();
@@ -140,7 +140,7 @@ public class CreditApp extends javax.swing.JFrame {
             Logger.getLogger(CreditApp.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-   
+
     private void updateData() throws IOException, FileNotFoundException, ParseException {
         Method data = new Method();
         List<Client> client = data.getDataFromFile("C:/JAVA_LATIHAN/dataclient.txt");
