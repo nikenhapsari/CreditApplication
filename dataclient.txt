@@ -1,0 +1,16 @@
+KN001, Niken Hapsari, 21, Wanita, false, 10000000.0, Bekasi, 30/01/1996, 0, 087741544882, Tidak Ada
+KN002, Indro Warkop, 39, Pria, true, 100000000.0, Jakarta, 28/02/1978, 1, 083192819101, Tidak Ada
+KN003, Single Happy, 22, Pria, false, 20000000.0, Bogor, 26/01/1995, 0, 081928291011, 021-99827101
+KN004, Sepanjang Kenangan, 24, Wanita, false, 40000000.0, Depok, 24/12/1993, 0, 082103201029, Tidak Ada
+KN005, Kita Bersama, 23, Wanita, false, 50000000.0, Tangerang, 22/10/1994, 0, 089282791011, Tidak Ada
+KN006, Melalui Rintangan, 37, Pria, true, 60000000.0, Bandung, 20/08/1980, 3, 087162618291, 021-88291018
+KN007, Demi Rintangan, 20, Wanita, false, 80000000.0, Yogyakarta, 18/06/1997, 0, 087792728101, Tidak Ada
+KN008, Bangtan Sonyeondan, 25, Pria, false, 90000000.0, Solo, 16/04/1992, 0, 082819101820, Tidak Ada
+KN009, Yeoja Chingu, 27, Wanita, false, 200000000.0, Surabaya, 14/02/1990, 0, 081829101820, 021-71189109
+KN010, Blackpink, 32, Pria, true, 100000000.0, Bali, 12/11/1985, 5, 085682910193, Tidak Ada
+KN011, Girls Geneartion, 27, Wanita, false, 50000000.0, Cirebon, 10/09/1990, 0, 089281019201, Tidak Ada
+KN012, Kinanthi Dewi R, 26, Wanita, false, 60000000.0, Indramayu, 08/07/1991, 0, 087821910290, 021-92817361
+KN013, Niken Cantik, 25, Wanita, false, 60000000.0, Medan, 06/05/1992, 0, 087938202029, Tidak Ada
+KN014, Big Bang, 33, Pria, true, 50000000.0, Palembang, 04/03/1984, 2, 088392829292, Tidak Ada
+KN015, Wisnu Arimurti N, 21, Pria, false, 80000000.0, Cianjur, 02/01/1996, 0, 081928301032, 021-02981931
+KN016, Indocyber, 0,Pria, true, 1000000000.0, Daan Mogot, 03/10/2017, 500, 00000000000, 000-0000000
